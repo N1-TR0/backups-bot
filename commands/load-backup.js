@@ -29,7 +29,7 @@ exports.run = async (client, message, args) => {
                 }).catch((err) => {
             
                     if (err === 'No backup found')
-                        return message.channel.send(':x: No backup found for ID '+backupID+'!');
+                        return message.channel.send(':x: No backup found for the recovery code '+backupID+'!');
                     else
                         return message.author.send(':x: An error occurred: '+(typeof err === 'string') ? err : JSON.stringify(err));
             
