@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
     const backupID = args.join(' ');
 
     if (!backupID)
-        return message.channel.send(':x: Please specify a valid backup ID!');
+        return message.channel.send(':x: Please specify a valid recovery code!');
 
     backup.fetch(backupID).then((backup) => {
 
