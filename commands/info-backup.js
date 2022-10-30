@@ -24,14 +24,14 @@ exports.run = async (client, message, args) => {
             .addField('Server name', backup.data.name)
             .addField('Size', backup.size + ' kb')
             .addField('Created at', formattedDate)
-            .setFooter('Backup ID: '+backup.id);
+            .setFooter('Recovery ID: '+backup.id);
 
         return message.channel.send(embed);
 
     }).catch((err) => {
 
         if (err === 'No backup found')
-            return message.channel.send(':x: No backup found for ID '+backupID+'!');
+            return message.channel.send(':x: No backup found for recovery code you entered '+backupID+'!');
         else
             return message.channel.send(':x: An error occurred: '+(typeof err === 'string') ? err : JSON.stringify(err));
 
